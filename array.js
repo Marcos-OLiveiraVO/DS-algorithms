@@ -1,11 +1,11 @@
 // acessando pelo index
-// let avgTemp = [];
+let avgTemp = [];
 
-// avgTemp[0] = 33.5;
-// avgTemp[1] = 33.6;
-// avgTemp[2] = 35;
-// avgTemp[3] = 39.2;
-// avgTemp[4] = 43;
+avgTemp[0] = 33.5;
+avgTemp[1] = 33.6;
+avgTemp[2] = 35;
+avgTemp[3] = 39.2;
+avgTemp[4] = 43;
 
 // console.log(avTemp[3]);
 
@@ -41,19 +41,28 @@ for (let i = 0; i < fibonacci.length; i++) {
   // console.log(fibonacci[i]);
 }
 
-// adição e remoção de cada item
-let numbers = [1, 2, 3, 4, 5, 6];
+// // adição e remoção de cada item
+// // let numbers1 = [1, 2, 3, 4, 5, 6];
 
-//adiciona no final
-numbers.push(7);
+// //adiciona no final
+// numbers.push(7);
 
-//adiciona no inicio
-numbers.unshift(-4);
+// //adiciona no inicio
+// numbers.unshift(-4);
 
-//remove no inicio
-numbers.shift();
+// //remove no inicio
+// numbers.shift();
 
-//remove no final
-numbers.pop();
+// //remove no final
+// numbers.pop();
+
+// console.log(numbers);
+
+//remove a partir de uma posição especifica
+let numbers = [0, 2, 3, 4, 5];
+
+//apartir do primeiro elemento, vai remover determinados numeros
+// numbers.splice(1, 1);
+// numbers.splice(1, 0, 3, 4, 5);
 
 console.log(numbers);
