@@ -78,3 +78,30 @@
 // const decToBinary = new DecToBinary();
 
 // console.log(decToBinary.convert(25));
+
+// algorithm that convert base number
+class BaseConvert {
+  constructor() {
+    this.restStack = [];
+    this.baseString = "";
+    this.digits = "0123456789ABCDEF";
+  }
+
+  convert(decNumber, base) {
+    while (decNumber > 0) {
+      const rest = Math.floor(decNumber % base);
+      this.restStack.push(rest);
+      decNumber = Math.floor(decNumber / base);
+    }
+
+    while (this.restStack.length > 0) {
+      this.baseString += this.digits[this.restStack.pop()];
+    }
+
+    return this.baseString;
+  }
+}
+
+const baseConvert = new BaseConvert();
+
+console.log(baseConvert.convert(125, 16));
