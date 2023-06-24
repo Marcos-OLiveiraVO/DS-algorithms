@@ -54,27 +54,27 @@
 // // stack.print();
 
 // algorithm that transform a dec number to binary number
-class DecToBinary {
-  constructor() {
-    this.restStack = [];
-    this.binaryString = "";
-  }
+// class DecToBinary {
+//   constructor() {
+//     this.restStack = [];
+//     this.binaryString = "";
+//   }
 
-  convert(decNumber) {
-    while (decNumber > 0) {
-      const rest = Math.floor(decNumber % 2);
-      this.restStack.push(rest);
-      decNumber = Math.floor(decNumber / 2);
-    }
+//   convert(decNumber) {
+//     while (decNumber > 0) {
+//       const rest = Math.floor(decNumber % 2);
+//       this.restStack.push(rest);
+//       decNumber = Math.floor(decNumber / 2);
+//     }
 
-    while (this.restStack.length > 0) {
-      this.binaryString += this.restStack.pop().toString();
-    }
+//     while (this.restStack.length > 0) {
+//       this.binaryString += this.restStack.pop().toString();
+//     }
 
-    return this.binaryString;
-  }
-}
+//     return this.binaryString;
+//   }
+// }
 
-const decToBinary = new DecToBinary();
+// const decToBinary = new DecToBinary();
 
-console.log(decToBinary.convert(25));
+// console.log(decToBinary.convert(25));
