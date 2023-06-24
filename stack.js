@@ -1,54 +1,80 @@
-class Stack {
+// class Stack {
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   push(element) {
+//     this.items.push(element);
+//   }
+
+//   pop() {
+//     return this.items.pop();
+//     //remove the last element from stack
+//   }
+
+//   peek() {
+//     return this.items.length - 0;
+//     // return the last element of stack
+//   }
+
+//   isEmpty() {
+//     return this.items.length === 0;
+//     // return if stack is empty
+//   }
+
+//   clear() {
+//     this.items = [];
+//     // clear all stack
+//   }
+
+//   size() {
+//     return this.items.length;
+//     //return the size of stack
+//   }
+
+//   print() {
+//     console.log(this.items.toString());
+//     //print the stack
+//   }
+// }
+
+// const stack = new Stack();
+
+// stack.push(5);
+// stack.push(2);
+// stack.push(3);
+// stack.push(4);
+// stack.push(5);
+
+// // stack.clear();
+// // console.log(stack.size());
+// // console.log(stack.isEmpty());
+// // console.log(stack.peek());
+// // stack.pop();
+// // stack.print();
+
+// algorithm that transform a dec number to binary number
+class DecToBinary {
   constructor() {
-    this.items = [];
+    this.restStack = [];
+    this.binaryString = "";
   }
 
-  push(element) {
-    this.items.push(element);
-  }
+  convert(decNumber) {
+    while (decNumber > 0) {
+      const rest = Math.floor(decNumber % 2);
+      this.restStack.push(rest);
+      decNumber = Math.floor(decNumber / 2);
+    }
 
-  pop() {
-    return this.items.pop();
-    //remove the last element from stack
-  }
+    while (this.restStack.length > 0) {
+      this.binaryString += this.restStack.pop().toString();
+    }
 
-  peek() {
-    return this.items.length - 0;
-    // return the last element of stack
-  }
-
-  isEmpty() {
-    return this.items.length === 0;
-    // return if stack is empty
-  }
-
-  clear() {
-    this.items = [];
-    // clear all stack
-  }
-
-  size() {
-    return this.items.length;
-    //return the size of stack
-  }
-
-  print() {
-    console.log(this.items.toString());
-    //print the stack
+    return this.binaryString;
   }
 }
 
-const stack = new Stack();
+const decToBinary = new DecToBinary();
 
-stack.push(5);
-stack.push(2);
-stack.push(3);
-stack.push(4);
-stack.push(5);
-
-// stack.clear();
-// console.log(stack.size());
-// console.log(stack.isEmpty());
-// console.log(stack.peek());
-// stack.pop();
-// stack.print();
+console.log(decToBinary.convert(25));
