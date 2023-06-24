@@ -1,41 +1,54 @@
 class Stack {
   constructor() {
-    this.item = [];
+    this.items = [];
   }
 
   push(element) {
-    this.item.push(element);
+    this.items.push(element);
   }
 
   pop() {
-    this.item.pop();
-
+    return this.items.pop();
     //remove the last element from stack
   }
 
   peek() {
-    this.item.peek();
+    return this.items.length - 0;
     // return the last element of stack
   }
 
   isEmpty() {
-    this.item.empty();
-
+    return this.items.length === 0;
     // return if stack is empty
   }
 
   clear() {
-    this.item.clear();
+    this.items = [];
     // clear all stack
   }
 
   size() {
-    this.item.size();
+    return this.items.length;
     //return the size of stack
   }
 
   print() {
-    this.item.print;
+    console.log(this.items.toString());
     //print the stack
   }
 }
+
+const stack = new Stack();
+
+stack.push(5);
+stack.push(2);
+stack.push(3);
+stack.push(4);
+stack.push(5);
+
+// stack.clear();
+// console.log(stack.size());
+// console.log(stack.isEmpty());
+// console.log(stack.peek());
+// stack.pop();
+// stack.print();
