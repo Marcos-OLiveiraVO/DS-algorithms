@@ -65,4 +65,24 @@ let numbers = [0, 2, 3, 4, 5];
 // numbers.splice(1, 1);
 // numbers.splice(1, 0, 3, 4, 5);
 
-console.log(numbers);
+// console.log(numbers);
+
+// matrizes bidimensionais, arrays bidimensionais
+let avgTempWeek = [
+  [33, 36, 34, 35, 32, 31, 26],
+  [36, 29, 31, 35, 33, 39, 42],
+];
+
+// let avgTempWeek1 = [33, 36, 34, 35, 32, 31, 26];
+// let avgTempWeek2 = [36, 29, 31, 35, 33, 39, 42];
+
+// avgTempWeek[0] = avgTempWeek1;
+// avgTempWeek[1] = avgTempWeek2;
+
+for (let i = 0; i < avgTempWeek.length; i++) {
+  for (let j = 0; j < avgTempWeek[i].length; j++) {
+    console.log(avgTempWeek[i][j]);
+  }
+}
+
+// console.log(avgTempWeek[0][5]);
