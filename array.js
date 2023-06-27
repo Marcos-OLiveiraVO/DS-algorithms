@@ -84,28 +84,28 @@ let numbers = [0, 2, 3, 4, 5];
 
 // matrizes tridimensionais e como iterar sobre elas
 
-let month = [];
+// let month = [];
 
-let firstWeeks = [];
-let lastWeeks = [];
+// let firstWeeks = [];
+// let lastWeeks = [];
 
-let avgTempWeek1 = [33, 36, 34, 35, 32, 31, 26];
-let avgTempWeek2 = [36, 29, 31, 35, 33, 39, 42];
+// let avgTempWeek1 = [33, 36, 34, 35, 32, 31, 26];
+// let avgTempWeek2 = [36, 29, 31, 35, 33, 39, 42];
 
-let avgTempWeek3 = [37, 23, 15, 22, 15, 14, 26];
-let avgTempWeek4 = [31, 38, 39, 33, 35, 22.2, 20];
+// let avgTempWeek3 = [37, 23, 15, 22, 15, 14, 26];
+// let avgTempWeek4 = [31, 38, 39, 33, 35, 22.2, 20];
 
-firstWeeks = [avgTempWeek1, avgTempWeek2];
-lastWeeks = [avgTempWeek3, avgTempWeek4];
+// firstWeeks = [avgTempWeek1, avgTempWeek2];
+// lastWeeks = [avgTempWeek3, avgTempWeek4];
 
-month = [firstWeeks, lastWeeks];
+// month = [firstWeeks, lastWeeks];
 
-for (let x = 0; x < month.length; x++) {
-  for (let y = 0; y < month[x].length; y++) {
-    for (let z = 0; z < month[x][y].length; z++) {
-      console.log(month[x][y][z]);
-    }
-  }
-}
+// for (let x = 0; x < month.length; x++) {
+//   for (let y = 0; y < month[x].length; y++) {
+//     for (let z = 0; z < month[x][y].length; z++) {
+//       console.log(month[x][y][z]);
+//     }
+//   }
+// }
 
 // console.log(avgTempWeek[0][5]);
