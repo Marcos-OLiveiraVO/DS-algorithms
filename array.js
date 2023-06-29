@@ -108,4 +108,16 @@ let numbers = [0, 2, 3, 4, 5];
 //   }
 // }
 
-// console.log(avgTempWeek[0][5]);
+let month = [];
+
+let weeksTemp = [2, 33, 56, 67, 88, 72, 32];
+let weeksTemp2 = [23, 34, 56, 77, 88, 99, 33];
+
+month[0] = weeksTemp;
+month[1] = weeksTemp2;
+
+for (let i = 0; i < month.length; i++) {
+  for (let j = 0; j < month[i].length; j++) {
+    console.log(month[i][j]);
+  }
+}
