@@ -110,32 +110,32 @@ class Queue {
 //   return queue.dequeue9;
 // }
 
-class HotPotato {
-  constructor() {
-    this.queue = new Queue();
-  }
+// class HotPotato {
+//   constructor() {
+//     this.queue = new Queue();
+//   }
 
-  Game(nameList, num) {
-    for (let i = 0; i < nameList.length; i++) {
-      this.queue.enqueue(nameList[i]);
-    }
+//   Game(nameList, num) {
+//     for (let i = 0; i < nameList.length; i++) {
+//       this.queue.enqueue(nameList[i]);
+//     }
 
-    let eliminated = "";
+//     let eliminated = "";
 
-    while (this.queue.size() > 1) {
-      for (let i = 0; i < num; i++) {
-        this.queue.enqueue(this.queue.dequeue());
-      }
-      eliminated = this.queue.dequeue();
-      console.log(`${eliminated} was eliminated`);
-    }
-    return this.queue.dequeue();
-  }
-}
+//     while (this.queue.size() > 1) {
+//       for (let i = 0; i < num; i++) {
+//         this.queue.enqueue(this.queue.dequeue());
+//       }
+//       eliminated = this.queue.dequeue();
+//       console.log(`${eliminated} was eliminated`);
+//     }
+//     return this.queue.dequeue();
+//   }
+// }
 
-const hotPotato = new HotPotato();
+// const hotPotato = new HotPotato();
 
-const names = ["lucas", "barbara", "camel", "mary"];
-const winner = HotPotato.Game(names, 7);
+// const names = ["lucas", "barbara", "camel", "mary"];
+// const winner = HotPotato.Game(names, 7);
 
-console.log(`the winner was ${winner}`);
+// console.log(`the winner was ${winner}`);
