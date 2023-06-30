@@ -45,48 +45,97 @@ class Queue {
 
 // // console.log(queue.print());
 
-class Node {
-  constructor(element, priority) {
-    this.element = element;
-    this.priority = priority;
-  }
-}
+// class Node {
+//   constructor(element, priority) {
+//     this.element = element;
+//     this.priority = priority;
+//   }
+// }
 
-class PriorityQueue {
+// class PriorityQueue {
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   queue(element, priority) {
+//     let added = false;
+//     const newNode = new Node(element, priority);
+
+//     for (let i = 0; i < this.items.length; i++) {
+//       if (newNode.priority < this.items[i].priority) {
+//         this.items.splice(i, 0, newNode);
+//         added = true;
+//         break;
+//       }
+//     }
+//     if (!added) {
+//       this.items.push(newNode);
+//     }
+//   }
+
+//   dequeue() {
+//     return this.items.shift();
+//   }
+
+//   print() {
+//     for (let i = 0; i < this.items.length; i++) {
+//       console.log(
+//         `${this.items[i].element}, prioridade: ${this.items[i].priority}`
+//       );
+//     }
+//   }
+// }
+
+// const pQueue = new PriorityQueue();
+
+// pQueue.queue("lucas", 2);
+// pQueue.print();
+
+// function HotPotato(nameList, num) {
+//   let queue = new Queue();
+
+//   for (let i = 0; i < nameList.length; i++) {
+//     queue.enqueue(nameList[i]);
+//   }
+
+//   let eliminated = "";
+
+//   while (queue.size() > 1) {
+//     for (let i = 0; i < num; i++) {
+//       queue.enqueue(queue.dequeue());
+//     }
+//     eliminated = queue.dequeue();
+//     console.log(`${eliminated} was eliminated`);
+//   }
+//   return queue.dequeue9;
+// }
+
+class HotPotato {
   constructor() {
-    this.items = [];
+    this.queue = new Queue();
   }
 
-  queue(element, priority) {
-    let added = false;
-    const newNode = new Node(element, priority);
+  Game(nameList, num) {
+    for (let i = 0; i < nameList.length; i++) {
+      this.queue.enqueue(nameList[i]);
+    }
 
-    for (let i = 0; i < this.items.length; i++) {
-      if (newNode.priority < this.items[i].priority) {
-        this.items.splice(i, 0, newNode);
-        added = true;
-        break;
+    let eliminated = "";
+
+    while (this.queue.size() > 1) {
+      for (let i = 0; i < num; i++) {
+        this.queue.enqueue(this.queue.dequeue());
       }
+      eliminated = this.queue.dequeue();
+      console.log(`${eliminated} was eliminated`);
     }
-    if (!added) {
-      this.items.push(newNode);
-    }
-  }
-
-  dequeue() {
-    return this.items.shift();
-  }
-
-  print() {
-    for (let i = 0; i < this.items.length; i++) {
-      console.log(
-        `${this.items[i].element}, prioridade: ${this.items[i].priority}`
-      );
-    }
+    return this.queue.dequeue();
   }
 }
 
-const pQueue = new PriorityQueue();
+const hotPotato = new HotPotato();
 
-pQueue.queue("lucas", 2);
-pQueue.print();
+const names = ["lucas", "barbara", "camel", "mary"];
+const winner = HotPotato.Game(names, 7);
+
+console.log(`the winner was ${winner}`);
