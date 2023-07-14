@@ -105,3 +105,26 @@
 // const baseConvert = new BaseConvert();
 
 // console.log(baseConvert.convert(125, 16));
+
+class DecToBinary {
+  constructor() {
+    this.restStack = [];
+    this.binaryString = "";
+  }
+
+  convert(decNumber) {
+    while (decNumber > 0) {
+      const rest = Math.floor(decNumber % 2);
+      this.restStack.push(rest);
+      decNumber = Math.floor(decNumber / 2);
+    }
+    while (this.restStack.length > 0) {
+      this.binaryString += this.restStack.pop().toString();
+    }
+    return this.binaryString;
+  }
+}
+
+const decToBinary = new DecToBinary();
+
+console.log(decToBinary.convert(125, 16));
