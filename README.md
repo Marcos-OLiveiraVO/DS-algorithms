@@ -22,4 +22,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-I hope this repository proves useful to you in your own study and development of skills in data structures and algorithms!
+I hope this repository proves useful to you in your own study and development of skills in data structures and algorithms.
