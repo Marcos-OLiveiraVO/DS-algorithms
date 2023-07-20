@@ -107,22 +107,3 @@ let numbers = [0, 2, 3, 4, 5];
 //     }
 //   }
 // }
-
-let avgWeekNumbers = [];
-
-let firstWeek = [];
-let secondWeek = [];
-
-let avgWeek1 = [22, 33, 44, 55, 66, 77, 32];
-let avgWeek2 = [22, 33, 44, 55, 66, 77, 32];
-
-firstWeek = avgWeek1;
-secondWeek = avgWeek2;
-
-avgWeekNumbers = [firstWeek, secondWeek];
-
-for (let i = 0; i < avgWeekNumbers.length; i++) {
-  for (let j = 0; j < avgWeekNumbers[i].length; j++) {
-    console.log(avgWeekNumbers[i][j]);
-  }
-}

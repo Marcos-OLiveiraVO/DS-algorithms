@@ -31,7 +31,7 @@ class LinkedList {
   }
 
   insert(position, element) {
-    // add a element in to a especific position
+    // add a element in to a specific position
   }
 
   removeAt(position) {
