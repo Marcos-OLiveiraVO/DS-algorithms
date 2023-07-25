@@ -10,7 +10,7 @@ This repository contains the code and notes from my study on data structures and
 
 ## Algorithms
 
-- Iteration: I used loops to iterate and print values from arrays, either to display the days of the week or the numbers from the Fibonacci sequence.
+- Iteration: I used loops to iterate and print values from arrays, either to display the days of the week or the numbers from the Fibonacci sequence
 
 ## Contribution
 
