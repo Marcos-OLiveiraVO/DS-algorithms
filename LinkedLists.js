@@ -70,8 +70,7 @@ class LinkedList {
           previous = current;
           current = current.next;
         }
-        node.next = current;
-        previous.next = node;
+        previous.next = current.next;
       }
       this.length++;
       return true;
@@ -82,6 +81,8 @@ class LinkedList {
   }
 
   remove(element) {
+    let index = this.indexOf(element);
+    return this.removeAt(index);
     //remove a element
   }
 
@@ -137,4 +138,6 @@ linkedList.append("lucas");
 linkedList.print();
 // console.log(linkedList.indexOf("josh"));
 linkedList.insert("mary", 0);
+linkedList.print();
+console.log(linkedList.remove("jose"));
 linkedList.print();
