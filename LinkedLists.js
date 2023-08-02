@@ -30,16 +30,16 @@ class LinkedList {
     //add a element in to the final list
   }
 
-  insert(position, element) {
+  insert(element, position) {
     if (position >= 0 && position <= this.length) {
       let node = new Node(element);
-      current = this.head;
+      let current = this.head;
       let previous;
       let index = 0;
 
       if (position === 0) {
         node.next = current;
-        head = node;
+        this.head = node;
       } else {
         while (index++ < position) {
           previous = current;
@@ -48,8 +48,10 @@ class LinkedList {
         node.next = current;
         previous.next = node;
       }
-      length++;
+      this.length++;
       return true;
+    } else {
+      return false;
     }
 
     // add a element in to a specific position
@@ -62,7 +64,7 @@ class LinkedList {
       let index = 0;
 
       if (position === 0) {
-        head = current.next;
+        this.head = current.next;
       } else {
         while (index++ < position) {
           previous = current;
@@ -84,6 +86,17 @@ class LinkedList {
   }
 
   indexOf(element) {
+    let current = this.head;
+    let index = 0;
+
+    while (element) {
+      if (element === current.element) {
+        return index;
+      }
+      index++;
+      current = current.next;
+    }
+    return -1;
     //return the position of element
   }
 
@@ -120,6 +133,8 @@ const linkedList = new LinkedList();
 linkedList.append("josh");
 linkedList.append("jose");
 linkedList.append("lucas");
-
-// linkedList.removeAt(1);
+// linkedList.removeAt(0);
+linkedList.print();
+// console.log(linkedList.indexOf("josh"));
+linkedList.insert("mary", 0);
 linkedList.print();
