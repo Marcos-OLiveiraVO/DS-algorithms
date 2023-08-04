@@ -5,29 +5,26 @@ class Node {
   }
 }
 
-class LinkedList {
+class LL {
   constructor() {
     this.length = 0;
     this.head = null;
   }
 
   append(element) {
-    const node = new Node(element);
-
+    let node = new Node(element);
     let current;
 
     if (this.head === null) {
       this.head = node;
     } else {
       current = this.head;
-
       while (current.next) {
         current = current.next;
       }
       current.next = node;
     }
     this.length++;
-    //add a element in to the final list
   }
 
   insert(element, position) {
@@ -53,12 +50,10 @@ class LinkedList {
     } else {
       return false;
     }
-
-    // add a element in to a specific position
   }
 
   removeAt(position) {
-    if (position > -1 && position < this.length) {
+    if (position >= -1 && position < this.length) {
       let current = this.head;
       let previous;
       let index = 0;
@@ -77,13 +72,6 @@ class LinkedList {
     } else {
       return false;
     }
-    // remove a element from specific position
-  }
-
-  remove(element) {
-    let index = this.indexOf(element);
-    return this.removeAt(index);
-    //remove a element
   }
 
   indexOf(element) {
@@ -98,15 +86,11 @@ class LinkedList {
       current = current.next;
     }
     return -1;
-    //return the position of element
   }
 
-  isEmpty() {
-    // return if the list is empty or not
-  }
-
-  size() {
-    // return the size of list
+  remove(element) {
+    let index = this.indexOf(element);
+    return this.removeAt(index);
   }
 
   toString() {
@@ -117,27 +101,33 @@ class LinkedList {
       string += current.element + " ";
       current = current.next;
     }
-
     return string;
+  }
+  size() {
+    return this.length;
+  }
 
-    //return the string
+  getHead() {
+    return this.head;
+  }
+
+  isEmpty() {
+    return this.length === 0;
   }
 
   print() {
     console.log(this.toString());
-    // print the list
   }
 }
 
-const linkedList = new LinkedList();
+const ll = new LL();
 
-linkedList.append("josh");
-linkedList.append("jose");
-linkedList.append("lucas");
-// linkedList.removeAt(0);
-linkedList.print();
-// console.log(linkedList.indexOf("josh"));
-linkedList.insert("mary", 0);
-linkedList.print();
-console.log(linkedList.remove("jose"));
-linkedList.print();
+ll.append("josh");
+ll.append("jose");
+ll.append("mary");
+ll.insert("mikah", 2);
+// ll.removeAt(1);
+// ll.remove();
+console.log(ll.indexOf("mary"));
+// ll.remove("mary");
+ll.print();
