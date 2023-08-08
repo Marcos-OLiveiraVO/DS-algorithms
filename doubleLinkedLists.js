@@ -33,26 +33,26 @@ class DoubleLL {
   }
 
   insert(element, position) {
-    if (position >= 0 && position < this.length) {
+    if (position >= 0 && position <= this.length) {
       let node = new Node(element);
-      let current = node;
+      let current = this.head;
       let previous;
       let index = 0;
 
       if (position === 0) {
         if (!this.head) {
-          this.head = current;
-          this.tail = current;
+          this.head = node;
+          this.tail = node;
         } else {
           node.next = current;
           current.prev = node;
-          head = node;
+          this.head = node;
         }
       } else if (position === this.length) {
         current = this.tail;
         current.next = node;
         node.prev = current;
-        tail = node;
+        this.tail = node;
       } else {
         while (index++ < position) {
           previous = current;
@@ -60,8 +60,8 @@ class DoubleLL {
         }
         node.next = current;
         previous.next = node;
-        current.next = node;
-        node.prev = current;
+        current.prev = node;
+        node.prev = previous;
       }
       this.length++;
       return true;
@@ -124,4 +124,5 @@ const doubleLL = new DoubleLL();
 doubleLL.append("lucas");
 doubleLL.append("mary");
 doubleLL.append("josh");
+doubleLL.insert("bia", 1);
 doubleLL.print();
