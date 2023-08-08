@@ -2,41 +2,57 @@ class Node {
   constructor(element) {
     this.element = element;
     this.next = null;
+    this.prev = null;
   }
 }
 
-class LL {
+class DoubleLL {
   constructor() {
     this.length = 0;
     this.head = null;
+    this.tail = null;
   }
 
   append(element) {
-    let current;
     let node = new Node(element);
+    let current;
 
     if (this.head === null) {
+      node.next = current;
       this.head = node;
+      this.tail = node;
     } else {
       current = this.head;
       while (current.next) {
         current = current.next;
       }
       current.next = node;
+      this.tail = node;
     }
     this.length++;
   }
 
   insert(element, position) {
-    if (position >= 0 && position <= this.length) {
+    if (position >= 0 && position < this.length) {
       let node = new Node(element);
-      let current = this.head;
+      let current = node;
       let previous;
       let index = 0;
 
       if (position === 0) {
-        node.next = current;
-        this.head = node;
+        if (!this.head) {
+          this.head = current;
+          this.tail = current;
+        } else {
+          node.next = current;
+          current.prev = node;
+          head = node;
+        }
+      } else if (position === this.length) {
+        current = this.tail;
+        current.next = node;
+        node.prev = current;
+        tail = node;
       } else {
         while (index++ < position) {
           previous = current;
@@ -44,6 +60,8 @@ class LL {
         }
         node.next = current;
         previous.next = node;
+        current.next = node;
+        node.prev = current;
       }
       this.length++;
       return true;
@@ -52,27 +70,7 @@ class LL {
     }
   }
 
-  removeAt(position) {
-    if (position >= -1 && position <= this.length) {
-      let current = this.head;
-      let previous;
-      let index = 0;
-
-      if (position === 0) {
-        this.head = current.next;
-      } else {
-        while (index++ < position) {
-          previous = current;
-          current = current.next;
-        }
-        previous.next = current.next;
-      }
-      this.length--;
-      return true;
-    } else {
-      return false;
-    }
-  }
+  removeAt(position) {}
 
   indexOf(element) {
     let current = this.head;
@@ -122,14 +120,8 @@ class LL {
   }
 }
 
-const ll = new LL();
-
-ll.append("josh");
-ll.append("jose");
-ll.append("mary");
-ll.insert("mikah", 2);
-// ll.removeAt(1);
-// ll.remove("mary");
-console.log(ll.indexOf("jose"));
-// ll.remove("mary");
-ll.print();
+const doubleLL = new DoubleLL();
+doubleLL.append("lucas");
+doubleLL.append("mary");
+doubleLL.append("josh");
+doubleLL.print();
