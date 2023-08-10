@@ -18,9 +18,9 @@ class DoubleLL {
     let current;
 
     if (this.head === null) {
-      node.next = current;
       this.head = node;
       this.tail = node;
+      node.next = current;
     } else {
       current = this.head;
       while (current.next) {
@@ -33,40 +33,34 @@ class DoubleLL {
   }
 
   insert(element, position) {
-    if (position >= 0 && position <= this.length) {
-      let node = new Node(element);
-      let current = this.head;
-      let previous;
-      let index = 0;
+    let node = new Node(element);
+    let current = this.head;
+    let previous;
+    let index = 0;
 
-      if (position === 0) {
-        if (!this.head) {
-          this.head = node;
-          this.tail = node;
-        } else {
-          node.next = current;
-          current.prev = node;
-          this.head = node;
-        }
-      } else if (position === this.length) {
-        current = this.tail;
-        current.next = node;
-        node.prev = current;
+    if (position === 0) {
+      if (!this.head) {
+        this.head = node;
         this.tail = node;
       } else {
-        while (index++ < position) {
-          previous = current;
-          current = current.next;
-        }
         node.next = current;
-        previous.next = node;
         current.prev = node;
-        node.prev = previous;
+        this.head = node;
       }
-      this.length++;
-      return true;
+    } else if (position === this.length) {
+      current = this.tail;
+      current.next = node;
+      node.prev = current;
+      this.tail = node;
     } else {
-      return false;
+      while (index++ < position) {
+        previous = current;
+        current = current.next;
+      }
+      node.next = current;
+      current.prev = node;
+      previous.prev = node;
+      node.prev = previous;
     }
   }
 
